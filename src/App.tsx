@@ -50,7 +50,7 @@ function App() {
         </nav>
 
         {/* Контент */}
-        <div className="relative z-10 max-w-8xl flex flex-col lg:flex-row items-center justify-center gap-12 sm:gap-16 md:gap-24 lg:gap-40 xl:gap-60 mt-32 sm:mt-40 px-2 sm:px-4">
+        <div className="relative z-10 max-w-8xl flex flex-col lg:flex-row items-center justify-center gap-12 sm:gap-16 md:gap-24 lg:gap-40 xl:gap-60 mt-32 sm:mt-0 px-2 sm:px-4">
           <div className="text-center lg:text-left">
             <h1 className="text-[#0ce3b3] text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
               AI-менеджер
