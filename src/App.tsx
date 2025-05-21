@@ -1,4 +1,6 @@
 import { AiDemo } from './components/aiDemo';
+import { motion } from 'framer-motion';
+
 
 import Logo from './assets/logo.svg?react';
 import BgImage from './assets/main-bg.svg?react';
@@ -7,8 +9,14 @@ import { BusinessBenefitsSection } from './components/businessBenefitsSection';
 import { HowItWorks } from './components/howItWorks';
 import { WhereCanUse } from './components/whereCanUse';
 import { StatsSection } from './components/statsSection';
+import { ComparisonBlock } from './components/сomparisonBlock';
+import { useInView } from 'react-intersection-observer';
+import { Footer } from './components/footer';
 
 function App() {
+
+  const [refText, inViewText] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [refDemo, inViewDemo] = useInView({ triggerOnce: true, threshold: 0.1 });
   return (
     <>
       <section className="relative min-h-[calc(100vh+90px)] text-white flex items-center justify-center overflow-hidden px-4 sm:px-6">
@@ -40,6 +48,9 @@ function App() {
               <a href="#how" className="hover:text-white transition">
                 Как работает
               </a>
+              <a href="#comparison" className="hover:text-white transition">
+                 Сравнение с человеком
+              </a>
             </div>
 
             {/* Кнопка */}
@@ -51,30 +62,42 @@ function App() {
 
         {/* Контент */}
         <div className="relative z-10 max-w-8xl flex flex-col lg:flex-row items-center justify-center gap-12 sm:gap-16 md:gap-24 lg:gap-40 xl:gap-60 mt-32 sm:mt-0 px-2 sm:px-4">
-          <div className="text-center lg:text-left">
-            <h1 className="text-[#0ce3b3] text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
-              AI-менеджер
-              <div className="text-white font-light">для вашего бизнеса</div>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl max-w-xl text-white/80 mb-6 sm:mb-8">
-              Менеджер на основе искусственного интеллекта,
-              <br className="hidden sm:block" />
-              который знает всё о вашей услуге
-              <br />
-              Работает <span className="text-[#0ce3b3]">24/7</span>. Реагирует мгновенно
-            </p>
-            <p className="text-xl sm:text-2xl text-white/80 mb-8">
-              Не болеет, не уходит в отпуск и не требует зарплату
-            </p>
-            <button className="bg-[#10b590] text-white py-3 px-6 sm:px-8 rounded-full text-base sm:text-lg hover:opacity-80 transition">
-              Попробовать сейчас
-            </button>
-          </div>
+      <motion.div
+        ref={refText}
+        initial={{ opacity: 0, y: 30 }}
+        animate={inViewText ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
+        className="text-center lg:text-left"
+      >
+        <h1 className="text-[#0ce3b3] text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
+          AI-менеджер
+          <div className="text-white font-light">для вашего бизнеса</div>
+        </h1>
+        <p className="text-base sm:text-lg md:text-xl max-w-xl text-white/80 mb-6 sm:mb-8">
+          Менеджер на основе искусственного интеллекта,
+          <br className="hidden sm:block" />
+          который знает всё о вашей услуге
+          <br />
+          Работает <span className="text-[#0ce3b3]">24/7</span>. Реагирует мгновенно
+        </p>
+        <p className="text-xl sm:text-2xl text-white/80 mb-8">
+          Не болеет, не уходит в отпуск и не требует зарплату
+        </p>
+        <button className="bg-[#10b590] text-white py-3 px-6 sm:px-8 rounded-full text-base sm:text-lg hover:opacity-80 transition">
+          Попробовать сейчас
+        </button>
+      </motion.div>
 
-          <div className="w-full max-w-[400px] sm:max-w-[480px] md:max-w-[550px]">
-            <AiDemo />
-          </div>
-        </div>
+      <motion.div
+        ref={refDemo}
+        initial={{ opacity: 0, y: 30 }}
+        animate={inViewDemo ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="w-full max-w-[400px] sm:max-w-[480px] md:max-w-[550px]"
+      >
+        <AiDemo />
+      </motion.div>
+    </div>
       </section>
 
       <div id="stats">
@@ -92,7 +115,13 @@ function App() {
       <div id="how">
         <HowItWorks />
       </div>
+
+      <div id="comparison">
+        <ComparisonBlock />
+      </div>
+      <Footer />
     </>
+    
   );
 }
 
