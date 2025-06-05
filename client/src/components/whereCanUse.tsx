@@ -92,9 +92,9 @@ export const WhereCanUse: FC = () => {
       </div>
 
       <div className="flex justify-center mt-14">
-        <button className="bg-[#10b590] text-white py-3 px-8 rounded-full text-lg hover:opacity-80 transition">
+        <a href="#feedback" className="bg-[#10b590] text-white py-3 px-8 rounded-full text-lg hover:opacity-80 transition">
           Подключить AI-менеджера
-        </button>
+        </a>
       </div>
     </section>
   );

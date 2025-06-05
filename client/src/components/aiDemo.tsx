@@ -62,7 +62,7 @@ export const AiDemo = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-white/20 backdrop-blur-md rounded-xl p-4 w-[600px] h-[380px] overflow-hidden"
+      className="bg-white/20 backdrop-blur-md rounded-xl p-4 w-full h-[380px] overflow-hidden"
     >
       <div className="space-y-2 text-sm">
         {chat.map((msg, i) => (

@@ -93,9 +93,9 @@ export const BusinessBenefitsSection = () => {
             AI-менеджер решает эту задачу.
           </p>
           <div className="flex justify-left mt-14">
-            <button className="bg-[#10b590] text-white py-3 px-8 rounded-full text-lg hover:opacity-80 transition">
+            <a href="#feedback" className="relative bg-[#10b590] text-white py-3 px-8 rounded-full text-lg hover:opacity-80 transition">
               Получить AI-менеджера
-            </button>
+            </a>
           </div>
         </div>
 
