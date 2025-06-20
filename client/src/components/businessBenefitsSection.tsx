@@ -33,7 +33,7 @@ const benefits = [
   {
     title: 'Поддерживает естественный диалог',
     description:
-      'AI-менеджер понимает суть запроса, даже если клиент пишет неформально — как в чате с живым человеком',
+      'ИИ-менеджер понимает суть запроса, даже если клиент пишет неформально — как в чате с живым человеком',
     Icon: IntroductionIcon,
   },
   {
@@ -86,15 +86,15 @@ export const BusinessBenefitsSection = () => {
       <div className="flex max-w-7xl gap-2 mx-auto flex-col lg:flex-row">
         <div className="max-w-4xl mx-auto text-left mb-16">
           <h2 className="text-4xl font-semibold mb-6">
-            Зачем вашему бизнесу <p className="text-[#0ce3b3]">AI-менеджер</p>
+            Зачем вашему бизнесу <p className="text-[#0ce3b3]">ИИ-менеджер</p>
           </h2>
           <p className="text-lg">
             Ваши клиенты не любят ждать. А ваши менеджеры не могут быть на связи 24/7. <br />
-            AI-менеджер решает эту задачу.
+            ИИ-менеджер решает эту задачу.
           </p>
           <div className="flex justify-left mt-14">
             <a href="#feedback" className="relative bg-[#10b590] text-white py-3 px-8 rounded-full text-lg hover:opacity-80 transition">
-              Получить AI-менеджера
+              Получить ИИ-менеджера
             </a>
           </div>
         </div>

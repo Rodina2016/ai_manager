@@ -92,7 +92,7 @@ function App() {
             className="text-center lg:text-left"
           >
             <h1 className="text-[#0ce3b3] text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
-              AI-менеджер
+              ИИ-менеджер
               <div className="text-white font-light">для вашего бизнеса</div>
             </h1>
             <p className="text-base sm:text-lg md:text-xl max-w-xl text-white/80 mb-6 sm:mb-8">

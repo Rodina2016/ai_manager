@@ -20,7 +20,7 @@ const features = [
   },
   {
     title: '💰 Стоимость',
-    ai: 'Фиксированная от X₽ в месяц',
+    ai: 'Фиксированная 75 000 ₽ в месяц',
     human: 'От 30 000₽ + налоги',
   },
   {
@@ -60,7 +60,7 @@ export const ComparisonBlock: React.FC = () => {
     <section className="bg-[linear-gradient(180deg,_#4d4d91,_#0F0F0F)] text-white py-16 px-4 sm:px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center">
-          <span className="text-[#0ce3b3]">AI-менеджер</span> vs Человек-менеджер
+          <span className="text-[#0ce3b3]">ИИ-менеджер</span> vs Человек-менеджер
         </h2>
         <div className="space-y-4">
           {features.map((item, idx) => {
@@ -80,7 +80,7 @@ export const ComparisonBlock: React.FC = () => {
               >
                 <div className="sm:w-1/3 font-semibold text-white/90">{item.title}</div>
                 <div className="sm:w-1/3">
-                  <span className="block text-sm text-gray-400 mb-1">AI-менеджер</span>
+                  <span className="block text-sm text-gray-400 mb-1">ИИ-менеджер</span>
                   <p className="text-white/95">{item.ai}</p>
                 </div>
                 <div className="sm:w-1/3">

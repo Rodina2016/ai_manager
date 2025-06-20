@@ -74,7 +74,7 @@ export const AiDemo = () => {
                 : 'bg-gray-300 text-black'
             }`}
           >
-            <strong>{msg.from === 'user' ? 'Вы' : 'AI-менеджер'}:</strong> {msg.text}
+            <strong>{msg.from === 'user' ? 'Вы' : 'ИИ-менеджер'}:</strong> {msg.text}
           </div>
         ))}
         {typing && (
@@ -85,7 +85,7 @@ export const AiDemo = () => {
                 : 'bg-gray-300 text-black'
             }`}
           >
-            <strong>{typing === 'user' ? 'Вы' : 'AI-менеджер'}:</strong>{' '}
+            <strong>{typing === 'user' ? 'Вы' : 'ИИ-менеджер'}:</strong>{' '}
             <span className="animate-pulse text-xs"> печатает ...</span>
           </div>
         )}
