@@ -63,6 +63,8 @@ app.get('*', (_, res) => {
 
 
 app.post('/webhook', async (req, res) => {
+  console.log('📥 Входящее сообщение от Telegram:', JSON.stringify(req.body, null, 2));
+
   const message = req.body.message;
 
   if (!message || !message.text) return res.sendStatus(200);
