@@ -61,6 +61,36 @@ app.get('*', (_, res) => {
   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
 });
 
+
+app.post('/webhook', async (req, res) => {
+  const message = req.body.message;
+
+  if (!message || !message.text) return res.sendStatus(200);
+
+  const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+  const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+
+  const text = `📩 Новое сообщение от ${message.from.username || message.from.first_name || 'неизвестно'}:\n\n${message.text}`;
+
+  try {
+    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: TELEGRAM_CHAT_ID, // твоё личное chat_id
+        text,
+      }),
+    });
+
+    console.log('➡️ Перенаправлено сообщение от пользователя тебе в ЛС');
+    res.sendStatus(200);
+  } catch (err) {
+    console.error('❌ Ошибка пересылки сообщения:', err.message);
+    res.sendStatus(500);
+  }
+});
+
+
 app.listen(PORT, () => {
   console.log(`🚀 Сервер запущен на http://localhost:${PORT}`);
 });
