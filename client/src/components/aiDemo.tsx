@@ -8,7 +8,7 @@ type Message = {
 const messages: Message[] = [
   { from: 'bot', text: 'Привет! Я помогу вам с любыми вопросами о нашей услуге.' },
   { from: 'user', text: 'Сколько стоит интеграция?' },
-  { from: 'bot', text: 'Интеграция начинается от 4900 ₽ в месяц.' },
+  { from: 'bot', text: 'Стоимость фиксированная 75 000 ₽ в месяц.' },
   { from: 'user', text: 'На сколько умный ваш менеджер?' },
   { from: 'bot', text: 'Пользователи не отличают его от обычного человека.' },
   { from: 'user', text: 'Есть ли пробный период?' },
@@ -74,7 +74,7 @@ export const AiDemo = () => {
                 : 'bg-gray-300 text-black'
             }`}
           >
-            <strong>{msg.from === 'user' ? 'Вы' : 'ИИ-менеджер'}:</strong> {msg.text}
+            <strong>{msg.from === 'user' ? 'Вы' : 'ИИ'}:</strong> {msg.text}
           </div>
         ))}
         {typing && (

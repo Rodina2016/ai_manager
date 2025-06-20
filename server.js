@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import fetch from 'node-fetch'; // либо можно использовать native fetch в Node 18+
+import fetch from 'node-fetch'; 
 
 dotenv.config();
 
