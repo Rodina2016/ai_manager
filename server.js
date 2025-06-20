@@ -68,7 +68,7 @@ app.post('/webhook', async (req, res) => {
   if (!message || !message.text) return res.sendStatus(200);
 
   const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-  const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+  const TELEGRAM_CHAT_ID = process.env.TELEGRAM_MY_ID;
 
   const text = `📩 Новое сообщение от ${message.from.username || message.from.first_name || 'неизвестно'}:\n\n${message.text}`;
 
