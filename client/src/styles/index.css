@@ -1,7 +1,16 @@
 @import 'tailwindcss';
 
+@plugin 'tailwind-scrollbar' {
+  nocompatible: true;
+}
+
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
+}
+
+body {
+  background-color: #131727;
 }

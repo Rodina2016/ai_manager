@@ -60,7 +60,7 @@ const StepCard = ({
 
 export const HowItWorks = () => {
   return (
-    <section className="bg-[linear-gradient(180deg,_#262d5f,_#4d4d91)] py-24 px-6 md:px-24 text-white">
+    <section className="bg-[linear-gradient(180deg,_#262d5f,_#131727)] py-24 px-6 md:px-24 text-white">
       <h2 className="text-4xl font-semibold text-center mb-16">
         Как работает <span className="text-[#0ce3b3]">ИИ-менеджер</span>
       </h2>

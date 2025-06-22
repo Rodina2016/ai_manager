@@ -47,10 +47,11 @@ export const StatCard: React.FC<StatCardProps> = ({ value, description, delay = 
 
 export const StatsSection = () => {
   return (
-    <section className="bg-[linear-gradient(180deg,_#454d8f,_#232455)] py-24 px-6 md:px-24 text-white rounded-t-[90px] mt-[-90px] relative">
-      <h2 className="text-4xl font-semibold text-center mb-16">
-        Вы теряете клиентов ещё до начала разговора
+    <section className="bg-[linear-gradient(180deg,_#131727,_#232455)] py-24 px-6 md:px-24 text-white relative">
+      <h2 className="text-5xl font-semibold text-center mb-4">
+        Вы теряете клиентов 
       </h2>
+      <p className='text-3xl text-center mb-16'>ещё до начала разговора</p>
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 text-center">
         {stats.map((stat, index) => (
           <StatCard key={index} {...stat} delay={index * 0.15} />

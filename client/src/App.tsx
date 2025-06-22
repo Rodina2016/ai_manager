@@ -26,7 +26,7 @@ function App() {
     <>
       <section className="relative min-h-[calc(100vh+90px)] text-white flex items-center justify-center overflow-hidden px-4 sm:px-6">
         {/* Фон — градиент */}
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_right,_#489c94,_#0f152b,_#6871d0)]"></div>
+        {/* <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_right,_#489c94,_#0f152b,_#6871d0)]"></div> */}
 
         {/* Фон — картинка */}
         <div className="absolute inset-0 z-0 opacity-20">

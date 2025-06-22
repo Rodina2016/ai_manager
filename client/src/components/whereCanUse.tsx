@@ -68,7 +68,7 @@ const IndustryCard = ({
 
 export const WhereCanUse: FC = () => {
   return (
-    <section className="bg-[linear-gradient(180deg,_#17213f,_#262d5f)] py-24 px-6 md:px-24 text-white">
+    <section className="bg-[linear-gradient(180deg,_#131727,_#262d5f)] py-24 px-6 md:px-24 text-white">
       <h2 className="text-4xl font-semibold text-center mb-16">
         Где использовать <span className="text-[#0ce3b3]">ИИ-менеджера</span>
       </h2>

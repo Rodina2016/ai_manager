@@ -57,7 +57,7 @@ const features = [
 
 export const ComparisonBlock: React.FC = () => {
   return (
-    <section className="bg-[linear-gradient(180deg,_#4d4d91,_#0F0F0F)] text-white py-16 px-4 sm:px-8">
+    <section className="bg-[linear-gradient(180deg,_#131727,_#0F0F0F)] text-white py-16 px-4 sm:px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center">
           <span className="text-[#0ce3b3]">ИИ-менеджер</span> vs Человек-менеджер

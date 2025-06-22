@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+import { User, Bot } from 'lucide-react';
+
 
 type Message = {
   from: 'user' | 'bot';
@@ -60,36 +62,79 @@ export const AiDemo = () => {
   }, [chat, typing]);
 
   return (
-    <div
-      ref={containerRef}
-      className="bg-white/20 backdrop-blur-md rounded-xl p-4 w-full h-[380px] overflow-hidden"
-    >
-      <div className="space-y-2 text-sm">
-        {chat.map((msg, i) => (
-          <div
-            key={i}
-            className={`max-w-xs p-2 rounded-lg ${
-              msg.from === 'user'
-                ? 'bg-gray-500 text-white ml-auto text-right'
-                : 'bg-gray-300 text-black'
-            }`}
-          >
-            <strong>{msg.from === 'user' ? 'Вы' : 'ИИ'}:</strong> {msg.text}
+    <div className="relative w-100 h-200 bg-no-repeat bg-contain bg-center" style={{ backgroundImage: 'url(/phone.png)' }}>
+
+      <div
+        ref={containerRef}
+        className="
+        pt-25 px-10
+        top-[90px] left-[20px] right-[20px] bottom-[30px] 
+        w-full 
+          overflow-y-auto scrollbar-none flex flex-col space-y-2"
+      >
+    {chat.map((msg, i) => (
+      <div
+        key={i}
+        className={`flex items-end gap-2 ${
+          msg.from === 'user' ? 'justify-end' : 'justify-start'
+        }`}
+      >
+        {msg.from === 'bot' && (
+          <div className="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center text-white shrink-0">
+            <Bot size={16} />
           </div>
-        ))}
-        {typing && (
-          <div
-            className={`max-w-xs p-2 rounded-lg italic ${
-              typing === 'user'
-                ? 'bg-gray-500 text-white ml-auto text-right'
-                : 'bg-gray-300 text-black'
-            }`}
-          >
-            <strong>{typing === 'user' ? 'Вы' : 'ИИ-менеджер'}:</strong>{' '}
-            <span className="animate-pulse text-xs"> печатает ...</span>
+        )}
+
+        <div
+          className={`max-w-[75%] px-4 py-2 text-sm rounded-2xl break-words shadow-md ${
+            msg.from === 'user'
+              ? 'bg-[#229ED9] text-white self-end rounded-br-sm'
+              : 'bg-[#E5E5EA] text-black self-start rounded-bl-sm'
+          }`}
+        >
+          {msg.text}
+        </div>
+
+        {msg.from === 'user' && (
+          <div className="w-8 h-8 rounded-full bg-[#229ED9] flex items-center justify-center text-white shrink-0">
+            <User size={16} />
           </div>
         )}
       </div>
-    </div>
+    ))}
+
+    {typing && (
+      <div
+        className={`flex items-end gap-2 ${
+          typing === 'user' ? 'justify-end' : 'justify-start'
+        }`}
+      >
+        {typing === 'bot' && (
+          <div className="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center text-white shrink-0">
+            <Bot size={16} />
+          </div>
+        )}
+
+        <div
+          className={`max-w-[75%] px-4 py-2 text-sm rounded-2xl italic flex gap-1 ${
+            typing === 'user'
+              ? 'bg-[#229ED9] text-white self-end rounded-br-sm'
+              : 'bg-[#E5E5EA] text-black self-start rounded-bl-sm'
+          }`}
+        >
+          <span className="inline-block w-2 h-2 bg-current rounded-full animate-bounce [animation-delay:0s]" />
+          <span className="inline-block w-2 h-2 bg-current rounded-full animate-bounce [animation-delay:0.2s]" />
+          <span className="inline-block w-2 h-2 bg-current rounded-full animate-bounce [animation-delay:0.4s]" />
+        </div>
+
+        {typing === 'user' && (
+          <div className="w-8 h-8 rounded-full bg-[#229ED9] flex items-center justify-center text-white shrink-0">
+            <User size={16} />
+          </div>
+        )}
+      </div>
+    )}
+  </div>
+</div>
   );
 };
