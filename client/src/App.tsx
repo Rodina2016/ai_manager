@@ -52,7 +52,7 @@ function App() {
 
             {/* Справа: кнопка (десктоп) и бургер (мобилка) */}
             <div className="flex items-center gap-4">
-              <a href="#feedback" className="hidden lg:block bg-[#10b590] text-white py-2 px-4 rounded-full text-sm hover:opacity-80 transition">
+              <a href="#feedback" className="hidden lg:block bg-main text-white py-4 px-5 text-lg rounded-full hover:opacity-80 transition">
                 Оставить заявку
               </a>
 
@@ -75,7 +75,7 @@ function App() {
               <a href="#usecases" className="hover:text-white transition">Где использовать</a>
               <a href="#how" className="hover:text-white transition">Как работает</a>
               <a href="#comparison" className="hover:text-white transition">Сравнение с человеком</a>
-              <a href="#feedback" className="mt-2 bg-[#10b590] text-white py-2 px-4 rounded-full text-sm hover:opacity-80 transition">
+              <a href="#feedback" className="mt-2 bg-main text-white py-4 px-5 text-center text-lg rounded-full hover:opacity-80 transition">
                 Оставить заявку
               </a>
             </div>
@@ -100,12 +100,12 @@ function App() {
               <br className="hidden sm:block" />
               который знает всё о вашей услуге
               <br />
-              Работает <span className="text-[#0ce3b3]">24/7</span>. Реагирует мгновенно
+              Работает <span className="text-main text-2xl font-bold">24/7</span>. Реагирует мгновенно
             </p>
-            <p className="text-xl sm:text-2xl text-white/80 mb-8">
+            <p className="text-xl sm:text-2xl text-white/80 mb-10 px-4 lg:px-0">
               Не болеет, не уходит в отпуск и не требует зарплату
             </p>
-            <a href="#feedback" className="bg-[#10b590] text-white py-3 px-6 sm:px-8 rounded-full text-base sm:text-lg hover:opacity-80 transition">
+            <a href="#feedback" className="bg-main text-white py-5 px-5 text-lg sm:px-8 rounded-full sm:text-xl hover:opacity-80 transition">
               Попробовать сейчас
             </a>
           </motion.div>

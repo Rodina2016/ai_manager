@@ -57,10 +57,10 @@ const features = [
 
 export const ComparisonBlock: React.FC = () => {
   return (
-    <section className="bg-[linear-gradient(180deg,_#131727,_#0F0F0F)] text-white py-16 px-4 sm:px-8">
+    <section className="bg-[linear-gradient(180deg,_#131727,_#0F0F0F)] text-white py-10 lg:py-16 px-4 sm:px-8">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center">
-          <span className="text-[#0ce3b3]">ИИ-менеджер</span> vs Человек-менеджер
+        <h2 className="text-3xl lg:text-4xl font-bold mb-10 text-center">
+          <span className="text-main uppercase">ИИ-менеджер</span> <span className='text-5xl'>или</span> <span className="text-[#0ce3b3] uppercase">Человек-менеджер</span>
         </h2>
         <div className="space-y-4">
           {features.map((item, idx) => {
@@ -78,14 +78,14 @@ export const ComparisonBlock: React.FC = () => {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="bg-[#292947] rounded-2xl p-6 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-8 border border-gray-700"
               >
-                <div className="sm:w-1/3 font-semibold text-white/90">{item.title}</div>
+                <div className="sm:w-1/3 font-semibold text-white/80">{item.title}</div>
                 <div className="sm:w-1/3">
                   <span className="block text-sm text-gray-400 mb-1">ИИ-менеджер</span>
-                  <p className="text-white/95">{item.ai}</p>
+                  <p className="text-white/90 text-lg">{item.ai}</p>
                 </div>
                 <div className="sm:w-1/3">
                   <span className="block text-sm text-gray-400 mb-1">Человек</span>
-                  <p className="text-white/95">{item.human}</p>
+                  <p className="text-white/90 text-lg">{item.human}</p>
                 </div>
               </motion.div>
             );

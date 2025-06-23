@@ -79,18 +79,18 @@ const BenefitCard = ({
 
 export const BusinessBenefitsSection = () => {
   return (
-    <section className="relative bg-[linear-gradient(180deg,_#232455,_#131727)] text-[#dddddd] py-24 px-6 md:px-24">
+    <section className="relative bg-[linear-gradient(180deg,_#232455,_#131727)] text-[#dddddd] py-15 lg:py-24 px-6 md:px-24">
       {/* <div className="absolute inset-0 z-0 opacity-10 rotate-x-180">
         <BGImage className="w-full h-full object-cover" />
       </div> */}
       <div className="flex max-w-7xl gap-2 mx-auto flex-col lg:flex-row">
-        <div className="max-w-4xl mx-auto text-left mb-16">
+        <div className="max-w-4xl mx-auto text-left mb-8 lg:mb-16">
         <p className="text-2xl mb-4">Менеджеры не могут быть на&nbsp;связи&nbsp;24/7</p>
 
-        <h2 className="text-4xl font-semibold mb-6">Клиенты&nbsp;не&nbsp;любят ждать</h2>
+        <h2 className="text-3xl lg:text-4xl font-semibold mb-6 heading-accent">Клиенты&nbsp;не&nbsp;любят ждать</h2>
         <p className="text-lg">ИИ-менеджер решает эту задачу</p>
-          <div className="flex justify-left mt-14">
-            <a href="#feedback" className="relative bg-[#10b590] text-white py-3 px-8 rounded-full text-lg hover:opacity-80 transition">
+          <div className="flex justify-left mt-6 lg:mt-14">
+            <a href="#feedback" className="relative bg-main text-white py-4 px-5 text-lg rounded-full text-lg hover:opacity-80 transition">
               Решить проблему
             </a>
           </div>

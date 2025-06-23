@@ -34,7 +34,7 @@ export function FeedbackForm() {
   };
 
   return (
-    <section className="relative bg-[linear-gradient(180deg,_#0F0F0F,_#17213f)] text-[#dddddd] py-24 px-6 md:px-24">
+    <section className="relative bg-[linear-gradient(180deg,_#0F0F0F,_#17213f)] text-[#dddddd] py-10 lg:py-24 px-6 md:px-24">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ export function FeedbackForm() {
         className="relative z-10 max-w-3xl mx-auto w-full"
       >
         <h2 className="text-3xl sm:text-4xl font-semibold mb-10 text-center">
-          Оставить <span className="text-[#0ce3b3]">заявку</span>
+          Оставить <span className="text-main">заявку</span>
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -76,7 +76,7 @@ export function FeedbackForm() {
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="w-[250px] bg-[#10b590] hover:opacity-90 text-white font-semibold py-3 rounded-full transition disabled:opacity-60"
+              className="w-[250px] bg-main hover:opacity-90 text-white font-semibold py-3 rounded-full transition disabled:opacity-60"
             >
               {status === 'loading' ? 'Отправка...' : 'Отправить'}
             </button>

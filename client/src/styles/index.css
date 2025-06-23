@@ -4,6 +4,21 @@
   nocompatible: true;
 }
 
+@theme {
+  --color-main: #db6030;
+}
+
+@layer utilities {
+  .heading-accent {
+    @apply relative pl-6;
+  }
+
+  .heading-accent::before {
+    content: '';
+    @apply absolute left-0 top-1/2 -translate-y-1/2 w-3 h-full bg-main rounded-sm;
+  }
+}
+
 
 @layer base {
   html {

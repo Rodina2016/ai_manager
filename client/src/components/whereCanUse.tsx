@@ -56,24 +56,31 @@ const IndustryCard = ({
       transition={{ duration: 0.5, delay }}
       className={`
         bg-[radial-gradient(ellipse_at_top_left,_#192243,_#404280)]
-        text-white/90 rounded-2xl p-6 border-l-4 border-[#1c7a2f]
+        text-white/90 rounded-2xl p-5 
         ${cls}
       `}
     >
       <h3 className="text-2xl font-bold mb-2 text-white/80">{title}</h3>
-      <p className="text-white/75 text-lg">{description}</p>
+      <p className="text-white/75 text-base">{description}</p>
     </motion.div>
   );
 };
 
 export const WhereCanUse: FC = () => {
   return (
-    <section className="bg-[linear-gradient(180deg,_#131727,_#262d5f)] py-24 px-6 md:px-24 text-white">
-      <h2 className="text-4xl font-semibold text-center mb-16">
-        Где использовать <span className="text-[#0ce3b3]">ИИ-менеджера</span>
-      </h2>
+    <section className="bg-[linear-gradient(180deg,_#131727,_#262d5f)] py-10 lg:py-24 px-6 md:px-24 text-white">
+      <div className="max-w-6xl mx-auto mb-10">
+        <h2 className="heading-accent text-4xl lg:text-5xl font-bold mb-6 text-left">
+          Ваш бизнес может <span className="text-[#0ce3b3]">продавать больше</span>
+        </h2>
+        <p className="text-left text-lg lg:text-xl text-white/80 max-w-3xl">
+          ИИ-менеджер <span className="text-white font-semibold">быстро обрабатывает обращения</span>,
+          мгновенно отвечает, помогает с заказами, консультациями и приёмом заявок.
+        </p>
+        <p className='mt-4 text-xl'>Подходит для любых сфер.</p>
+      </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto auto-rows-[200px]">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto auto-rows-[180px]">
         {industries.map(({ title, description, cls }, index) => (
           <IndustryCard
             key={index}
@@ -85,17 +92,15 @@ export const WhereCanUse: FC = () => {
         ))}
       </div>
 
-      <div className="mt-12 text-center max-w-4xl mx-auto text-white/80 text-lg">
-        Благодаря гибкой архитектуре и обучению на базе вашего контента{' '}
-        <span className="text-[#0ce3b3]">ИИ-менеджера</span> легко адаптируется под любые
-        бизнес-задачи — от продаж и поддержки до консультаций и приёма заявок.
-      </div>
-
-      <div className="flex justify-center mt-14">
-        <a href="#feedback" className="bg-[#10b590] text-white py-3 px-8 rounded-full text-lg hover:opacity-80 transition">
-          Подключить ИИ-менеджера
+      <div className="flex justify-center mt-12 max-w-6xl mx-auto">
+        <a
+          href="#feedback"
+          className="bg-main text-white py-4 px-8 rounded-full text-lg hover:opacity-80 transition"
+        >
+          Бесплатная консультация
         </a>
       </div>
     </section>
   );
 };
+
