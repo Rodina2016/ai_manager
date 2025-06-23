@@ -19,11 +19,6 @@ const features = [
     human: '1–2 максимум',
   },
   {
-    title: '💰 Стоимость',
-    ai: 'Фиксированная 75 000 ₽ в месяц',
-    human: 'От 30 000₽ + налоги',
-  },
-  {
     title: '📈 Масштабируемость',
     ai: 'Легко',
     human: 'Трудозатратно',
@@ -60,7 +55,9 @@ export const ComparisonBlock: React.FC = () => {
     <section className="bg-[linear-gradient(180deg,_#131727,_#0F0F0F)] text-white py-10 lg:py-16 px-4 sm:px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl lg:text-4xl font-bold mb-10 text-center">
-          <span className="text-main uppercase">ИИ-менеджер</span> <span className='text-5xl'>или</span> <span className="text-[#0ce3b3] uppercase">Человек-менеджер</span>
+          <span className="text-main uppercase">ИИ-менеджер</span>{' '}
+          <span className="text-5xl">или</span>{' '}
+          <span className="text-[#0ce3b3] uppercase">Человек-менеджер</span>
         </h2>
         <div className="space-y-4">
           {features.map((item, idx) => {

@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 export function FeedbackForm() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [agreed, setAgreed] = useState(false);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  // Разрешаем ввод только цифр
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const digitsOnly = e.target.value.replace(/\D/g, '');
     setPhone(digitsOnly);
@@ -14,6 +14,8 @@ export function FeedbackForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!agreed) return;
+
     setStatus('loading');
 
     try {
@@ -27,6 +29,7 @@ export function FeedbackForm() {
         setStatus('success');
         setName('');
         setPhone('');
+        setAgreed(false);
       } else throw new Error();
     } catch {
       setStatus('error');
@@ -52,7 +55,7 @@ export function FeedbackForm() {
             <input
               type="text"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={e => setName(e.target.value)}
               required
               placeholder="Ваше имя"
               className="w-full bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/50 p-4 focus:outline-none focus:ring-2 focus:ring-[#10b590]"
@@ -71,11 +74,41 @@ export function FeedbackForm() {
             />
           </div>
 
-        
-          <div className='flex justify-center'>
+          <div className="flex items-start gap-2 text-sm text-white">
+            <input
+              type="checkbox"
+              id="agreement"
+              checked={agreed}
+              onChange={e => setAgreed(e.target.checked)}
+              className="mt-1 accent-[#10b590]"
+              required
+            />
+            <label htmlFor="agreement" className="flex-1">
+              Я соглашаюсь с{' '}
+              <a
+                href="/policy.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-[#0ce3b3]"
+              >
+                политикой обработки персональных данных
+              </a>{' '}
+              и{' '}
+              <a
+                href="/terms.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-[#0ce3b3]"
+              >
+                пользовательским соглашением
+              </a>
+            </label>
+          </div>
+
+          <div className="flex justify-center">
             <button
               type="submit"
-              disabled={status === 'loading'}
+              disabled={status === 'loading' || !agreed}
               className="w-[250px] bg-main hover:opacity-90 text-white font-semibold py-3 rounded-full transition disabled:opacity-60"
             >
               {status === 'loading' ? 'Отправка...' : 'Отправить'}
