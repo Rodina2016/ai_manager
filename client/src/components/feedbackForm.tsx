@@ -65,7 +65,8 @@ export function FeedbackForm() {
           <div>
             <label className="block mb-2 text-sm">Номер телефона</label>
             <input
-              type="tel"
+              type="phone"
+              name="phone"
               value={phone}
               onChange={handlePhoneChange}
               required
